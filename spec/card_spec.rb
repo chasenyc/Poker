@@ -31,6 +31,14 @@ describe 'Card#suit' do
   it "returns a suit" do
     expect(suits.include?(card.suit)).to eq true
   end
+
+  it "can be assigned a new suit" do
+    card.suit = :clubs
+    expect(card.suit).to eq :clubs
+
+    card.suit = :spades
+    expect(card.suit).to eq :spades
+  end
 end
 
 # describe

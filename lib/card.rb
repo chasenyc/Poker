@@ -1,8 +1,9 @@
 class Card
-  attr_accessor :value
+  attr_accessor :value, :suit
 
-  def suit
-    :hearts
+  def initialize(value = 1, suit = :hearts)
+    @value = value
+    @suit = suit
   end
 
 end
