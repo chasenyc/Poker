@@ -47,6 +47,7 @@ class Hand
       false
   end
 
+
   def four_of_a_kind?(frequency)
     frequency.values.any? {|value| value == 4}
   end
@@ -55,6 +56,25 @@ class Hand
     frequency.values.any? {|value| value == 2} &&
     frequency.values.any? {|value| value == 3}
   end
+
+  def flush?(same_suit)
+    same_suit
+  end
+
+  def straight?(frequency)
+    (frequency.keys.max - frequency.keys.min == 4)
+  end
+
+  def three_of_a_kind?(frequency)
+    frequency.values.any? {|value| value == 3}
+  end
+
+  def two_pair?(frequency)
+    (frequency.values.select {|value| value == 2}.count == 2)
+  end
+
+
+
 
 
 

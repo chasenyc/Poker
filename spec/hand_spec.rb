@@ -65,6 +65,50 @@ describe "Hand" do
 
   end
 
+  describe "Hand#flush?" do
+    it "returns true if hand is a flush" do
+      expect(hand.flush?(true)).to eq true
+    end
+    it "returns false if hand is not a flush" do
+      expect(hand.flush?(false)).to eq false
+    end
+
+  end
+
+  describe "Hand#straight?" do
+    it "returns true if hand is a straight" do
+      expect(hand.straight?({1 => 1, 2 => 1, 3 => 1, 4 => 1, 5 => 1})).to eq true
+    end
+    it "returns false if hand is not a straight" do
+      expect(hand.straight?({1 => 1, 6 => 1, 3 => 1, 4 => 1, 5 => 1})).to eq false
+    end
+
+  end
+
+  describe "Hand#three_of_a_kind?" do
+    it "returns true if hand has three of a kind" do
+      expect(hand.three_of_a_kind?({1 => 3, 2 => 1})).to eq true
+    end
+    it "returns false if hand has 5 different cards" do
+      expect(hand.three_of_a_kind?({1 => 1, 6 => 1, 3 => 1, 4 => 1, 5 => 1})).to eq false
+    end
+
+  end
+
+  describe "Hand#two_pair?" do
+    it "returns true if hand has two pairs" do
+      expect(hand.two_pair?({1 => 2, 2 => 2, 4 => 1})).to eq true
+    end
+    it "returns false if hand has one pair" do
+      expect(hand.two_pair?({1 => 2, 3 => 1, 4 => 1, 5 => 1})).to eq false
+    end
+
+  end
+
+
+
+
+
 
 
 end
