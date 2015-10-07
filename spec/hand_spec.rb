@@ -54,4 +54,17 @@ describe "Hand" do
     end
 
   end
+
+  describe "Hand#full_house?" do
+    it "returns true if hand is full house" do
+      expect(hand.full_house?({1 => 3, 2 => 2})).to eq true
+    end
+    it "returns false if hand is not a full house" do
+      expect(hand.full_house?({1 => 1, 6 => 1, 3 => 1, 4 => 1, 5 => 1})).to eq false
+    end
+
+  end
+
+
+
 end

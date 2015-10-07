@@ -51,6 +51,14 @@ class Hand
     frequency.values.any? {|value| value == 4}
   end
 
+  def full_house?(frequency)
+    frequency.values.any? {|value| value == 2} &&
+    frequency.values.any? {|value| value == 3}
+  end
+
+
+
+
 
 
 end
