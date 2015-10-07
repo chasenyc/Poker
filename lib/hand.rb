@@ -73,6 +73,14 @@ class Hand
     (frequency.values.select {|value| value == 2}.count == 2)
   end
 
+  def one_pair?(frequency)
+    frequency.values.include?(2)
+  end
+
+  def high_card(frequency)
+    frequency.keys.max
+  end
+
 
 
 

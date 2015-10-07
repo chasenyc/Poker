@@ -105,7 +105,22 @@ describe "Hand" do
 
   end
 
+  describe "Hand#one_pair?" do
+    it "returns true if hand has one pair" do
+      expect(hand.one_pair?({1 => 2, 2 => 1, 4 => 1, 5 => 1})).to eq true
+    end
+    it "returns false if hand has no pair" do
+      expect(hand.one_pair?({1 => 1, 3 => 1, 4 => 1, 5 => 1, 6 => 1})).to eq false
+    end
 
+  end
+
+  describe "Hand#high_card" do
+    it "returns value of highest card" do
+      expect(hand.high_card({1 => 2, 2 => 1, 4 => 1, 5 => 1})).to eq 5
+    end
+
+  end
 
 
 
