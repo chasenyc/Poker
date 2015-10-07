@@ -19,4 +19,10 @@ class Deck
   def shuffle!
     cards.shuffle!
   end
+
+  def deal_card(num)
+    dealt_cards = []
+    num.times {dealt_cards << cards.pop}
+    dealt_cards
+  end
 end

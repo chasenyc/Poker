@@ -39,5 +39,12 @@ end
 
 describe 'Deck#deal_card' do
   let (:deck) { Deck.new }
+  it "accepts number of cards as an argument" do
+    deck.deal_card(5)
+  end
 
+  it "returns array of cards" do
+    expect(deck.deal_card(5)).to be_an_instance_of Array
+    expect(deck.deal_card(4).sample).to be_an_instance_of Card
+  end
 end
